@@ -4,7 +4,6 @@ import reloadly.ms_01.dao.AccountDAO;
 import reloadly.ms_01.model.Account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import reloadly.ms_01.notification.EmailService;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -15,13 +14,9 @@ public class AccountServiceImp implements AccountService {
     @Autowired
     AccountDAO account;
 
-    @Autowired
-    EmailService emailService;
-
     @Override
     public boolean register(Account ac) {
         this.create(ac);
-        this.emailService.send(ac);
         return true;
     }
 

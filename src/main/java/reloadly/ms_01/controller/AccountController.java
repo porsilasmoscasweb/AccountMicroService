@@ -1,6 +1,5 @@
 package reloadly.ms_01.controller;
 
-import reloadly.ms_01.notification.EmailService;
 import reloadly.ms_01.service.AccountService;
 import reloadly.ms_01.model.Account;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,6 @@ public class AccountController {
 
     @Autowired
     AccountService service;
-
 
     @GetMapping(value = "accounts", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Account>> all() {
